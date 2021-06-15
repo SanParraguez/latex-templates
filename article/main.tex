@@ -1,0 +1,61 @@
+% ARTICLE TEMPLATE
+% Santiago Parraguez Cerda
+% University of Chile 
+% santiago.parraguez@ug.uchile.cl
+%
+% Version: 0.1 (15/06/2021)
+% 
+% CREATE DOCUMENT
+\documentclass[a4paper, 10pt]{article} 
+% Article size A4, 10pt (can be change to 'letterpaper' and any size you want).
+
+% IMPORT CONFIGURATIONS
+\input{config}
+
+% IMPORT PACKAGES
+\input{lib/imports}
+
+% IMPORT COMMANDS
+\input{lib/cmd}
+
+% IMPORT INITIAL CONFIGURATION
+\input{lib/init}
+
+% ======== DOCUMENT INFORMATION ========
+% TITLE
+\title{A new study of high scientific impact on a variety of topics}
+
+% AUTHORS
+\author[a]{Albert Einstein}
+\author[b, c]{Marie Skłodowska}
+\author[d]{Isaac Newton}
+
+% AFFILIATIONS
+\affil[a]{University of Zürich, Zürich, Switzerland.}
+\affil[b]{University of Paris, Paris, France}
+\affil[c]{She was the first person to win the Nobel Prize twice, and the only one to win the Nobel Prize in two scientific fields.}
+\affil[d]{Trinity College, Cambridge, United Kingdom}
+
+% ABSTRACT
+\abstract{
+This template allows you to create a well formatted Latex manuscript. You can change the title, authors, affiliations, abstract and keywords easily in the main.tex file. The main document must be written or inserted below "Insert sections", were I will leave a few examples of useful things you can do with this template.
+}
+
+% Keywords
+\keywords{
+\LaTeX, Github, Template, Paper, Open-Source
+}
+
+% =======================================
+\begin{document}
+
+% PAGE CONFIGURATIONS
+\input{lib/page}
+% =======================================
+% INSERT SECTIONS (here you can write your document)
+\input{sec/01_introduction}
+\input{sec/02_important_section}
+
+% =======================================
+\printbibliography
+\end{document}

@@ -1,0 +1,35 @@
+% =================
+%  PACKAGE IMPORTS
+% =================
+\usepackage[utf8]{inputenc}
+
+\usepackage{array}
+\usepackage{authblk}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage{indentfirst}
+\usepackage{lipsum}
+\usepackage{microtype}
+\usepackage{slantsc}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% PACKAGE WITH CONFIGURATIONS
+% ---------------------------
+\usepackage[english]{babel}
+\usepackage[shortlabels]{enumitem}
+
+% CONDITIONAL PACKAGES
+% --------------------
+% BIBLATEX
+\ifthenelse{\equal{\biblatexstyle}{apa}}{
+    \usepackage[backend=biber, natbib, style=\biblatexstyle, sorting=\biblatexsort, uniquelist=false, apamaxprtauth=\biblatexmaxapa]{biblatex}
+    }{
+    \usepackage[backend=biber, natbib, style=\biblatexstyle, sorting=\biblatexsort, uniquelist=false]{biblatex}
+}
