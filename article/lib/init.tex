@@ -2,27 +2,13 @@
 %  DOCUMENT INIT
 % =================
 
+% CHANGE DEFAULT IMAGE FOLDER
+\graphicspath{{./\defaultimagefolder}}
+
 % Set page margins in cm (requires 'geometry')
 \newcommand{\setpagemargincm}[4]{
     \newgeometry{left=#1cm, top=#2cm, right=#3cm, bottom=#4cm}
 }
-
-% CHANGE DEFAULT IMAGE FOLDER
-\graphicspath{{./\defaultimagefolder}}
-
-% INSERT REFERENCES
-\addbibresource{references.bib}
-\setlength{\bibhang}{1em}
-
-% SET CONFIGURATIONS
-\setlength{\parskip}{\setparskip}
-\setlength{\parindent}{\setparindent}
-\renewcommand{\baselinestretch}{\setbaselinestretch}
-
-% FORMATTING TITLES SPACING
-\titlespacing*{\section}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
-\titlespacing*{\subsection}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
-\titlespacing*{\subsubsection}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
 
 % RENEW AUTHOR AND AFFILIATION CONFIG
 \renewcommand\Authfont{\normalfont}
@@ -31,20 +17,35 @@
 \renewcommand\Authand{ and }
 \renewcommand\Authands{ and }
 \setlength{\affilsep}{.8em}
-  
-% ADD POINT TO SECTION NUMBERS
-\renewcommand\thesection{\arabic{section}.}
-\renewcommand\thesubsection{\thesection\arabic{subsection}.}
-\renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}.}
 
-% CONFIGURE TABLES
-\captionsetup[table]{labelfont=bf,
-                     labelsep=newline,
-                     singlelinecheck=false,
-                     skip=0.2\baselineskip}
-\captionsetup[figure]{labelfont=bf,
-                      singlelinecheck=false,
-                      skip=0.4\baselineskip}
+% FORMATTING SECTION TITLES
+\titlelabel{\thetitle. }
+
+\titlespacing*{\section}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
+
+% SET PARAGRAPH CONFIGURATIONS
+\setlength{\parskip}{\setparskip}
+\setlength{\parindent}{\setparindent}
+\renewcommand{\baselinestretch}{\setbaselinestretch}
+
+% INSERT REFERENCES
+\addbibresource{references.bib}
+\setlength{\bibhang}{1.5em}
+
+% CONFIGURE CAPTIONS
+\captionsetup[table]{
+    labelfont=bf, 
+    labelsep=newline, 
+    singlelinecheck=false, 
+    skip=0.2\baselineskip
+    }
+\captionsetup[figure]{
+    labelfont=bf, 
+    singlelinecheck=false, 
+    skip=0.4\baselineskip
+    }
 % \setlength\tabcolsep{0pt}
 
 % SET COLOURS FOR LINKS
