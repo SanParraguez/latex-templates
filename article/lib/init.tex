@@ -19,11 +19,12 @@
 \setlength{\affilsep}{.8em}
 
 % FORMATTING SECTION TITLES
-\titlelabel{\thetitle. }
-
 \titlespacing*{\section}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
 \titlespacing*{\subsubsection}{0pt}{1.2ex plus .5ex minus .2ex}{.6ex plus .2ex}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{1ex}{}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection.}{1ex}{}
+\titleformat{\subsubsection}{\normalfont\bfseries}{\thesubsubsection.}{1ex}{}
 
 % SET PARAGRAPH CONFIGURATIONS
 \setlength{\parskip}{\setparskip}
