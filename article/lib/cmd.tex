@@ -9,22 +9,25 @@
 \newcommand{\keywords}[1]{
     \def\thekeywords{#1}
     }
+\newcommand{\corrauthor}[1]{
+    \def\thecorrauthor{#1}
+    }
 
-% Maketitle COMMAND
+% MAKETITLE COMMAND
 \makeatletter
 \renewcommand\maketitle{
-    \raggedright\LARGE\rmfamily\@title\\
-    \vspace{0.5em}
+    {\raggedright\LARGE\rmfamily\@title\\
+    \vspace{0.5em}}
     \large\rmfamily\sffamily\@author\\
-    \vspace{1em} \hrule \vspace{1em}
+    \vspace{.1em} \hrule \vspace{1.2em}
     \normalfont
-    \begin{tabular}{@{}p{0.2\textwidth}@{}p{0.1\textwidth}@{}p{0.7\textwidth}@{}}
-        \large{\textls{\textsc{keywords}}} && \large{\textls{\textsc{abstract}}} \\
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0.23\textwidth} @{} p{0.7\textwidth} @{}}
+        \large{\textls[150]{\textsc{keywords}}} & \large{\textls[150]{\textsc{abstract}}} \\
+        \addlinespace[0.4em]
+        \cmidrule{1-1}\cmidrule{2-2}
         \addlinespace[0.25em]
-        \cmidrule{1-1}\cmidrule{3-3}
-        \addlinespace[0.25em]
-        \raggedright\thekeywords && \theabstract \\
-    \end{tabular}
+        \raggedright\thekeywords & \theabstract \\
+    \end{tabular*}
     \vspace{1.0em} \hrule \vspace{1.0em}
     }
 \makeatother
@@ -35,9 +38,19 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 % DEFINE TABLENOTE COMMAND
-\newcommand{\tablenote}[1]{
-    \vspace{-0.1em}\\{\small #1}
+\newcommand{\tablenote}[2][-0.1em]{
+    \renewcommand\arraystretch{100}
+    \vspace{#1}\\{\footnotesize#2}
     }
+    
+% DEFINE BLIND FOOTNOTE
+\newcommand\blfootnote[1]{%
+    \begin{NoHyper}
+    \renewcommand{\thefootnote}{}
+    \footnotetext{#1}
+    \renewcommand{\thefootnote}{\arabic{footnote}}
+    \end{NoHyper}
+}
 
 % DEFINE PAGESTYLE
 \fancypagestyle{core}{

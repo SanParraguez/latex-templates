@@ -19,3 +19,9 @@
 
 % APPLY PAGE STYLE
 \pagestyle{core}
+
+% ADD CORRESPONDING AUTHOR
+\ifdefined\thecorrauthor
+    \blfootnote{\thecorrauthor}
+    \else
+    \fi

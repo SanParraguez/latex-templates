@@ -3,11 +3,11 @@
 % University of Chile 
 % santiago.parraguez@ug.uchile.cl
 %
-% Version: 0.1.2 (29/06/2021)
+% Version: 0.1.3 (23/07/2021)
 % 
 % CREATE DOCUMENT
 \documentclass[a4paper, 10pt]{article} 
-% Article size A4, 10pt (can be change to 'letterpaper' and any size you want).
+% Article size A4, 10pt (can be change to 'letterpaper' or any size you want).
 
 % IMPORT CONFIGURATIONS
 \input{config}
@@ -27,14 +27,16 @@
 
 % AUTHORS
 \author[a]{Albert Einstein}
-\author[b,$\ast$]{Marie Skłodowska}
+\author[b,$\ast$, $\ast\ast$]{Marie Skłodowska}
 \author[d]{Isaac Newton}
 
 % AFFILIATIONS
 \affil[a]{University of Zürich, Zürich, Switzerland.}
 \affil[b]{University of Paris, Paris, France}
 \affil[d]{Trinity College, Cambridge, United Kingdom}
-\affil[$\ast$]{She was the first person to win the Nobel Prize twice, and the only one to win the Nobel Prize in two scientific fields.}
+\affil[$\ast\ast$]{She was the first person to win the Nobel Prize twice, and the only one to win the Nobel Prize in two scientific fields.}
+
+\corrauthor{\hspace{-1.8em}* Corresponding author.\\ \hspace*{2em}\textit{E-mail address}: marie.sklodowska@uniparis.fr}
 
 % ABSTRACT
 \abstract{
@@ -51,11 +53,11 @@ This template allows you to create a well formatted Latex manuscript. You can ch
 
 % PAGE CONFIGURATIONS
 \input{lib/page}
-% /////////////////////////////////////////////////////////////////////////
+% =======================================
 % INSERT SECTIONS (here you can write your document)
 \input{sec/01_introduction}
-\input{sec/02_important_section}
+\input{sec/02_using_the_template}
 
-% /////////////////////////////////////////////////////////////////////////
+% =======================================
 \printbibliography
 \end{document}

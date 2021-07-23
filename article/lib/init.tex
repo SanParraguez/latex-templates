@@ -29,7 +29,9 @@
 % SET PARAGRAPH CONFIGURATIONS
 \setlength{\parskip}{\setparskip}
 \setlength{\parindent}{\setparindent}
-\renewcommand{\baselinestretch}{\setbaselinestretch}
+\setstretch{\setbaselinestretch}
+% Changed to avoid modifying caption stretch
+% \renewcommand{\baselinestretch}{\setbaselinestretch}
 
 % INSERT REFERENCES
 \addbibresource{references.bib}
@@ -39,12 +41,14 @@
 
 % CONFIGURE CAPTIONS
 \captionsetup[table]{
+    font=small,
     labelfont=bf, 
     labelsep=newline, 
     singlelinecheck=false, 
     skip=0.2\baselineskip
     }
 \captionsetup[figure]{
+    font=small,
     labelfont=bf, 
     singlelinecheck=false, 
     skip=0.4\baselineskip
