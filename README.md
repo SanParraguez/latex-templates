@@ -11,3 +11,9 @@ A double column article that resembles the style of scientific journals.
 </p>
 
 You can also find the template in [Overleaf](https://www.overleaf.com/read/kbvvqcpcyvxk).
+
+## Report
+
+A single column standard report. Includes customizable portrait and index.
+
+You can also find the template in [Overleaf](https://es.overleaf.com/read/mqmjwchvzrkp).
