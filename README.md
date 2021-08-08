@@ -1,6 +1,6 @@
 # Latex Templates
 
-Repository with latex templates I have been creating and using over the years.
+Repository with latex templates I have been creating and using over the years. Just pick wich one you need and download the files inside its folder.
 
 ## Article
 
