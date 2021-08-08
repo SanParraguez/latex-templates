@@ -1,0 +1,26 @@
+% =========================
+%         COMMANDS
+% =========================
+
+% Check if a variable is defined
+\newcommand{\checkvardefined}[1]{
+	\ifthenelse{\isundefined{#1}}{
+		\errmessage{LaTeX Warning: Variable \noexpand#1 not defined}
+		\stop}{
+	}
+}
+% Set the geometry of the page (requires GEOMETRY)
+\newcommand{\setpagemargincm}[4]{
+    \newgeometry{left=#1cm, top=#2cm, right=#3cm, bottom=#4cm}
+}
+
+% Special table columns (requires ARRAY)
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% DEFINE TABLENOTE COMMAND
+\newcommand{\tablenote}[2][0pt]{
+    \vspace{#1}\\{\footnotesize#2\par}
+    }

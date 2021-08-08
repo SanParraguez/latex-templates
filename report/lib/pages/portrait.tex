@@ -1,0 +1,36 @@
+% =========================
+%      CREATE PORTRAIT
+% =========================
+\newpage
+\setpagemargincm{\pagemarginleft}{\firstpagemargintop}{\pagemarginright}{\pagemarginbottom}
+
+\thispagestyle{portrait}
+	
+~ \\
+\vfill
+\begin{center}
+	{\noindent \huge{\coursecode \ \coursename\par}} ~ \\
+    {\noindent \rule{\linewidth}{0.4mm}} ~ \\
+	{\centering \noindent \Huge{\reporttitle\par}} ~ \\
+    {\noindent \rule{\linewidth}{0.4mm}} ~ \\
+	{\noindent \Large{\maintopic\par}}
+\end{center}
+\vfill
+
+\vspace{1cm}
+\noindent
+\begin{minipage}{1.0\textwidth}
+	\begin{flushright}
+		\tableofmembers
+	\end{flushright}
+\end{minipage}
+\vspace{1cm}
+
+% ======================================
+% CONFIGURE NEXT PAGES
+\newpage
+\setpagemargincm{\pagemarginleft}{\pagemargintop}{\pagemarginright}{\pagemarginbottom}
+\pagestyle{prelude}
+\setlength{\headheight}{20pt}
+\pagenumbering{roman}
+\setcounter{page}{1}

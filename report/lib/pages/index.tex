@@ -1,0 +1,38 @@
+% ======================
+%      CREATE INDEX
+% ======================
+\renewcommand{\contentsname}{\nametablecontents}
+\renewcommand{\listfigurename}{\namelistfigures}
+\renewcommand{\listtablename}{\namelisttables}
+
+\ifthenelse{\equal{\showindex}{true}}{
+\tocloftpagestyle{prelude}
+\newpage
+\begingroup
+% \belowpdfbookmark{\nameltcont}{contents}
+
+\ifthenelse{\equal{\showdotafternum}{true}}{
+		\renewcommand{\cftsecaftersnum} {.}
+		\renewcommand{\cftsubsecaftersnum} {.}
+		\renewcommand{\cftsubsubsecaftersnum} {.}
+}{}
+
+% \def\cftsecnumwidth {1.9em}
+% \def\cftsubsecnumwidth {2.57em}
+% \def\cftsubsubsecnumwidth{3.35em}
+% \setlength{\cftsubsecindent}{1.9em}
+% \setlength{\cftsubsubsecindent}{4.47em}
+
+\setlength\cftbeforesecskip{\beforesecskip}
+\setlength\cftbeforesubsecskip{\beforesubsecskip}
+\setlength\cftbeforesubsubsecskip{\beforesubsubsecskip}
+
+\tableofcontents
+\ifthenelse{\equal{\showindextables}{true}}{
+    \listoftables}{}
+\ifthenelse{\equal{\showindexfigures}{true}}{
+    \listoffigures}{}
+
+\endgroup
+\newpage
+}{}

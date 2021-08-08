@@ -1,0 +1,34 @@
+% ===========================
+%       PACKAGE IMPORTS
+% ===========================
+\usepackage[utf8]{inputenc}
+
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage{indentfirst}
+\usepackage{lipsum}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{subcaption}
+\usepackage{titlesec}
+
+\usepackage[\defaultlanguage]{babel}
+\usepackage[titles]{tocloft}
+
+% BIBLATEX
+\ifthenelse{\equal{\biblatexstyle}{apa}}{
+    \usepackage[backend=biber, natbib, style=\biblatexstyle, sorting=\biblatexsort, uniquelist=false, apamaxprtauth=\biblatexmaxapa]{biblatex}
+    }{
+    \usepackage[backend=biber, natbib, style=\biblatexstyle, sorting=\biblatexsort, uniquelist=false]{biblatex}
+}

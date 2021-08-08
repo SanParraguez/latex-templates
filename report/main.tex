@@ -1,0 +1,91 @@
+% REPORT TEMPLATE
+% Santiago Parraguez Cerda
+% University of Chile 
+% santiago.parraguez@ug.uchile.cl
+%
+% Version: 1.0.0 (05/08/2021)
+% 
+% CREATE DOCUMENT
+\documentclass[a4paper, 11pt]{article} 
+% Article size A4, 10pt (can be change to 'letterpaper' and any size you want).
+
+% ============== DOCUMENT INFORMATION ====================
+\newcommand{\reporttitle} {Report Title}
+\newcommand{\maintopic} {Main topic}
+
+\newcommand{\documentauthor} {Santiago Parraguez Cerda}
+\newcommand{\coursename} {Name of the Course}
+\newcommand{\coursecode} {ME710}
+
+\newcommand{\universityname} {Universidad de Chile}
+\newcommand{\facultyname} {Facultad del Ciencias Físicas y Matemáticas}
+\newcommand{\universitydepartment} {Departamento de Ingeniería Mecánica}
+\newcommand{\departmentimage} {/logos/dimec.pdf}
+\newcommand{\departmentimageheight} {60pt}
+\newcommand{\universitylocation} {Santiago, Chile}
+
+% MEMBERS, TEACHERS and DATE
+\newcommand{\tableofmembers} {
+\begin{tabular}{ll}
+	Estudiante:
+	& \begin{tabular}[t]{l}
+		Santiago Parraguez C.
+	\end{tabular} \\
+	Profesor:
+	& \begin{tabular}[t]{l}
+		Isaac Newton
+	\end{tabular} \\
+	%Auxiliar:
+	%& \begin{tabular}[t]{l}
+	%	Juneitor O.
+	%\end{tabular} \\
+	\multicolumn{2}{l}{Fecha de entrega: \today} \\
+	\multicolumn{2}{l}{\universitylocation}
+\end{tabular}}{
+}
+% ========================================================
+
+% IMPORT CONFIGURATIONS
+\input{config}
+
+% IMPORT PACKAGES
+\input{lib/imports}
+
+% IMPORT COMMANDS
+\input{lib/cmd}
+
+% IMPORT INITIAL CONFIGURATION
+\input{lib/init}
+
+% INSERT REFERENCES
+\addbibresource{references.bib}
+
+% ========================================================
+\begin{document}
+	
+% PORTRAIT
+\input{lib/pages/portrait}
+
+% ABSTRACT (you can erase it)
+\begin{abstract}
+    \lipsum[1]
+\end{abstract}
+
+% INSERT INDEX
+\input{lib/pages/index} 
+
+% DOCUMENT PAGE CONFIGURATIONS
+\input{lib/page}
+
+% =========================== BEGIN DOCUMENT =========================
+
+\input{sec/01_A}
+\input{sec/02_B}
+
+% ====================================================================
+% REFERENCES
+\newpage
+\printbibliography[heading=bibintoc]
+
+% END DOCUMENT
+\end{document}
