@@ -38,9 +38,8 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 % DEFINE TABLENOTE COMMAND
-\newcommand{\tablenote}[2][-0.1em]{
-    \renewcommand\arraystretch{100}
-    \vspace{#1}\\{\footnotesize#2}
+\newcommand{\tablenote}[2][0pt]{
+    \vspace{#1}\\{\footnotesize#2\par}
     }
     
 % DEFINE BLIND FOOTNOTE
