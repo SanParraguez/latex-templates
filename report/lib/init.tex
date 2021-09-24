@@ -57,6 +57,12 @@
 	}{
 	\captionsetup[table]{position=bottom}
 }
+\ifthenelse{\equal{\fignumsec}{true}}{
+    \captionsetup{figurewithin=section}
+    }{}
+\ifthenelse{\equal{\tabnumsec}{true}}{
+    \captionsetup{tablewithin=section}
+    }{}
 
 % CONFIGURE BIBLIOGRAPHY
 \setlength\bibitemsep{\bibentrysep}
