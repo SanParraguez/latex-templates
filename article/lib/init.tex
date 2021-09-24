@@ -50,6 +50,12 @@
     singlelinecheck=false, 
     skip=0.4\baselineskip
     }
+\ifthenelse{\equal{\fignumsec}{true}}{
+    \captionsetup{figurewithin=section}
+    }{}
+\ifthenelse{\equal{\tabnumsec}{true}}{
+    \captionsetup{tablewithin=section}
+    }{}
 % \setlength\tabcolsep{0pt}
 
 % SET COLOURS FOR LINKS
