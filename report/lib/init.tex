@@ -86,15 +86,13 @@
     
     \fancyhf{}
     \fancyhead[L]{
-    	\universityname ~ \\
-    	\facultyname ~ \\
-    	\universitydepartment ~ \\
-    	\vspace{-\baselineskip}
-    }
-    \fancyhead[R]{
+        \hspace{.25cm}
     	\includegraphics[height=\departmentimageheight]{\departmentimage}
-    % 	\hspace{-0.255cm}
-    % 	\vspace{-0.20cm}
+        \begin{tabular}[b]{l}
+            \universityname ~\\
+        	\facultyname ~\\
+        	\universitydepartment ~\\ \vspace{-14pt}
+        \end{tabular}
     }
 }
 \fancypagestyle{prelude}{
@@ -114,5 +112,3 @@
 	\renewcommand{\footrulewidth}{0pt}
 }
 \renewcommand{\sectionmark}[1]{\markboth{#1}{#1}}     % To have correct names above page
-
-% RENAME OBJECTS

@@ -6,33 +6,21 @@
 \renewcommand{\listtablename}{\namelisttables}
 
 \ifthenelse{\equal{\showindex}{true}}{
-\tocloftpagestyle{prelude}
-\newpage
-\begingroup
-% \belowpdfbookmark{\nameltcont}{contents}
 
-\ifthenelse{\equal{\showdotafternum}{true}}{
-		\renewcommand{\cftsecaftersnum} {.}
-		\renewcommand{\cftsubsecaftersnum} {.}
-		\renewcommand{\cftsubsubsecaftersnum} {.}
-}{}
-
-% \def\cftsecnumwidth {1.9em}
-% \def\cftsubsecnumwidth {2.57em}
-% \def\cftsubsubsecnumwidth{3.35em}
-% \setlength{\cftsubsecindent}{1.9em}
-% \setlength{\cftsubsubsecindent}{4.47em}
-
-\setlength\cftbeforesecskip{\beforesecskip}
-\setlength\cftbeforesubsecskip{\beforesubsecskip}
-\setlength\cftbeforesubsubsecskip{\beforesubsubsecskip}
-
-\tableofcontents
-\ifthenelse{\equal{\showindextables}{true}}{
-    \listoftables}{}
-\ifthenelse{\equal{\showindexfigures}{true}}{
-    \listoffigures}{}
-
-\endgroup
-\newpage
+    \newpage
+    \begingroup
+    
+    \titlecontents{section} [2.0em] {\vspace{.3em}\normalfont\bfseries} {\contentslabel[\thecontentslabel.]{1.5em}} {\hspace*{-1.5em}}{\hfill\contentspage}
+    \titlecontents{subsection} [5.0em] {\vspace{.2em}\normalfont} {\contentslabel[\thecontentslabel.]{2.5em}} {\hspace*{-2.5em}} {\titlerule*[10pt]{.}\contentspage}
+    \titlecontents{subsubsection} [7.5em] {\vspace{.1em}\normalfont} {\contentslabel[\thecontentslabel.]{3.0em}} {\hspace*{-3.0em}} {\titlerule*[10pt]{.}\contentspage}
+    
+    \tableofcontents
+    \newpage
+    \ifthenelse{\equal{\showindextables}{true}}{
+        \listoftables}{}
+    \ifthenelse{\equal{\showindexfigures}{true}}{
+        \listoffigures}{}
+    
+    \endgroup
+    \newpage
 }{}

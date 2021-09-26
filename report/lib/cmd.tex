@@ -24,3 +24,17 @@
 \newcommand{\tablenote}[2][0pt]{
     \vspace{#1}\\{\footnotesize#2\par}
     }
+    
+% CREATE APPENDIX
+\newcommand{\beginappendix}[0]{
+    \appendix
+    \phantomsection
+    \addcontentsline{toc}{section}{Appendices}
+    \titleformat{\section}{\normalfont\Large\bfseries}{Appendix~\thesection.}{2ex}{}
+    \renewcommand{\sectionmark}[1]{\markboth{##1}{Appendices}}
+    \titlecontents{section} [8.6em] {\vspace{.2em}\normalfont} {\contentslabel[Appendix~\thecontentslabel.]{6.1em}} {\contentslabel{2.5em}} {\titlerule*[10pt]{.}\contentspage}
+}
+    
+% DEFINE MATH FORMULAS
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
