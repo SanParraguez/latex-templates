@@ -20,6 +20,12 @@
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+% Command for default float location
+\makeatletter
+    \providecommand*\setfloatlocation[2]{\@namedef{fps@#1}{#2}}
+    \g@addto@macro\@floatboxreset\centering
+\makeatother
+
 % DEFINE TABLENOTE COMMAND
 \newcommand{\tablenote}[2][0pt]{
     \vspace{#1}\\{\footnotesize#2\par}
@@ -27,14 +33,30 @@
     
 % CREATE APPENDIX
 \newcommand{\beginappendix}[0]{
+    \clearpage
     \appendix
     \phantomsection
     \addcontentsline{toc}{section}{Appendices}
-    \titleformat{\section}{\normalfont\Large\bfseries}{Appendix~\thesection.}{2ex}{}
-    \renewcommand{\sectionmark}[1]{\markboth{##1}{Appendices}}
-    \titlecontents{section} [8.6em] {\vspace{.2em}\normalfont} {\contentslabel[Appendix~\thecontentslabel.]{6.1em}} {\contentslabel{2.5em}} {\titlerule*[10pt]{.}\contentspage}
+    \titleformat{\section}{\normalfont\LARGE\bfseries\raggedright}{Appendix~\thesection.}{2ex}{}
+    \setcounter{table}{0}
+    \setcounter{figure}{0}
+    \renewcommand{\thetable}{\Alph{section}\arabic{table}}
+    \renewcommand{\thefigure}{\Alph{section}\arabic{figure}}
 }
     
 % DEFINE MATH FORMULAS
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
+
+% CREATE DEDICATION ENVIRONMENT
+\newenvironment{dedication}{
+    \clearpage
+    \thispagestyle{empty}
+    \vspace*{\stretch{1}}
+    \itshape
+    \raggedleft
+    }{
+    \par
+    \vspace{\stretch{3}}
+    \clearpage
+    }

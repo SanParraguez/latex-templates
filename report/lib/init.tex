@@ -17,17 +17,19 @@
 \vbadness=\maxdimen
 
 % FORMATTING TITLES (requires TITLESEC)
-\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{2ex}{}
-\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection.}{2ex}{}
-\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection.}{2ex}{}
-\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.0ex plus .2ex}
-\titlespacing*{\subsection} {0pt}{2.5ex plus 1ex minus .2ex}{1.0ex plus .2ex}
-\titlespacing*{\subsubsection}{0pt}{2.0ex plus 1ex minus .2ex}{.6ex plus .2ex}
+\titleformat{\section}{\normalfont\LARGE\bfseries\raggedright}{\thesection.}{2ex}{}
+\titleformat{\subsection}{\normalfont\Large\bfseries}{\thesubsection.}{2ex}{}
+\titleformat{\subsubsection}{\normalfont\large\bfseries}{\thesubsubsection.}{2ex}{}
+\titlespacing*{\section} {0pt}{3.0ex plus 1.5ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{2.0ex plus 1.0ex minus .2ex}{1.0ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 0.5ex minus .2ex}{0.5ex plus .2ex}
 
 % CONFIGURE FLOATS DISTANCES
 \setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
 \setlength{\floatsep}{12.0pt plus 2.0pt minus 2.0pt}
 \setlength{\intextsep}{18.0pt plus 4.0pt minus 4.0pt}
+\setfloatlocation{figure}{\figureplacement}
+\setfloatlocation{table}{\tableplacement}
 
 % CONFIGURE CAPTIONS
 \captionsetup[table]{
