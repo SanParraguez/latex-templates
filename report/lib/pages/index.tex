@@ -7,15 +7,15 @@
 
 \ifthenelse{\equal{\showindex}{true}}{
 
-    \newpage
+    \titlecontents{section} [2.0em] {\vspace{\beforesecskip}\normalfont\bfseries} {\contentslabel[\thecontentslabel.]{1.5em}} {\hspace*{-1.5em}}{\hfill\contentspage}
+    \titlecontents{subsection} [5.0em] {\vspace{\beforesubsecskip}\normalfont} {\contentslabel[\thecontentslabel.]{2.5em}} {\hspace*{-2.5em}} {\titlerule*[10pt]{.}\contentspage}
+    \titlecontents{subsubsection} [8.5em] {\vspace{\beforesubsubsecskip}\normalfont} {\contentslabel[\thecontentslabel.]{3.0em}} {\hspace*{-3.0em}} {\titlerule*[10pt]{.}\contentspage}
+    
     \begingroup
-    
-    \titlecontents{section} [2.0em] {\vspace{.3em}\normalfont\bfseries} {\contentslabel[\thecontentslabel.]{1.5em}} {\hspace*{-1.5em}}{\hfill\contentspage}
-    \titlecontents{subsection} [5.0em] {\vspace{.1em}\normalfont} {\contentslabel[\thecontentslabel.]{2.5em}} {\hspace*{-2.5em}} {\titlerule*[10pt]{.}\contentspage}
-    \titlecontents{subsubsection} [7.5em] {\normalfont} {\contentslabel[\thecontentslabel.]{3.0em}} {\hspace*{-3.0em}} {\titlerule*[10pt]{.}\contentspage}
-    
+    \clearpage
     \tableofcontents
-    \newpage
+    \clearpage
+    \let\clearpage\relax
     \ifthenelse{\equal{\showindextables}{true}}{
         \listoftables}{}
     \ifthenelse{\equal{\showindexfigures}{true}}{

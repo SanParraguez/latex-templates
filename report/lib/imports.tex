@@ -6,6 +6,7 @@
 
 \usepackage{array}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{bookmark}
 \usepackage{booktabs}
 \usepackage{caption}
@@ -13,7 +14,6 @@
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{graphicx}
-\usepackage{hyperref}
 \usepackage{ifthen}
 \usepackage{indentfirst}
 \usepackage{lipsum}
@@ -28,7 +28,10 @@
 
 % BIBLATEX
 \ifthenelse{\equal{\biblatexstyle}{apa}}{
-    \usepackage[backend=biber, natbib, style=\biblatexstyle, sorting=\biblatexsort, uniquelist=false, apamaxprtauth=\biblatexmaxapa]{biblatex}
+    \usepackage[backend=biber, natbib, style=apa, sorting=\biblatexsort, uniquelist=false, apamaxprtauth=\biblatexmaxapa]{biblatex}
     }{
     \usepackage[backend=biber, natbib, style=\biblatexstyle, sorting=\biblatexsort, uniquelist=false]{biblatex}
 }
+
+% Load hyperref at the end
+\usepackage{hyperref}

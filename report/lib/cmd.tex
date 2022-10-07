@@ -27,8 +27,8 @@
 \makeatother
 
 % DEFINE TABLENOTE COMMAND
-\newcommand{\tablenote}[2][0pt]{
-    \vspace{#1}\\{\footnotesize#2\par}
+\newcommand{\tablenote}[2][-1em]{
+    \vspace{#1}\\{\justify\footnotesize#2\par}
     }
     
 % CREATE APPENDIX
@@ -37,26 +37,46 @@
     \appendix
     \phantomsection
     \addcontentsline{toc}{section}{Appendices}
-    \titleformat{\section}{\normalfont\LARGE\bfseries\raggedright}{Appendix~\thesection.}{2ex}{}
-    \setcounter{table}{0}
-    \setcounter{figure}{0}
+    \titleformat{\section}{
+        % \clearpage\phantomsection
+        \setcounter{table}{0}
+        \setcounter{figure}{0}
+        \setcounter{equation}{0}
+        \normalfont\LARGE\bfseries\raggedright}
+        {\nameappendix~\thesection.}{2ex}{}
     \renewcommand{\thetable}{\Alph{section}\arabic{table}}
     \renewcommand{\thefigure}{\Alph{section}\arabic{figure}}
+    \renewcommand{\theequation}{\Alph{section}\arabic{equation}}
 }
     
 % DEFINE MATH FORMULAS
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\N}{\mathbb{N}}
 
 % CREATE DEDICATION ENVIRONMENT
 \newenvironment{dedication}{
     \clearpage
-    \thispagestyle{empty}
     \vspace*{\stretch{1}}
     \itshape
-    \raggedleft
+    \hfill
+    \begin{minipage}{.9\textwidth}
+    \justify
+    \leftskip=0pt plus 1fil
+    \rightskip=0pt plus -1fil
+    \parfillskip=0pt plus 1fil
     }{
     \par
+    \end{minipage} ~\\
     \vspace{\stretch{3}}
     \clearpage
+    }
+    
+% CREATE ABSTRACT ENVIRONMENT
+\newenvironment{abstractheader}[1][.5\textwidth]{
+    \RaggedLeft
+    \begin{minipage}{#1}
+    \justify
+    }{
+    \end{minipage} ~\\
     }

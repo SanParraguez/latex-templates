@@ -3,7 +3,7 @@
 % University of Chile 
 % santiago.parraguez@ug.uchile.cl
 %
-% Version: 1.1.1 (23/10/2021)
+% Version: 1.1.2 (07/10/2022)
 % 
 % CREATE DOCUMENT
 \documentclass[a4paper, 11pt]{article} 
@@ -67,9 +67,16 @@
 \input{lib/pages/portrait}
 
 % ABSTRACT (you can erase it)
-\begin{abstract}
-    \lipsum[1]
-\end{abstract}
+% =============================================================
+\clearpage
+\begin{center}
+    \large
+    \reporttitle
+\end{center}
+
+\lipsum[100]
+% =============================================================
+\clearpage
 
 % INSERT INDEX
 \input{lib/pages/index} 
@@ -84,8 +91,12 @@
 
 % ====================================================================
 % REFERENCES
-\newpage
+\clearpage
+\phantomsection
 \printbibliography[heading=bibintoc]
+
+% % APPENDIX
+% \input{sec/appendix}
 
 % END DOCUMENT
 \end{document}

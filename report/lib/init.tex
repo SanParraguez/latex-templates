@@ -17,17 +17,18 @@
 \vbadness=\maxdimen
 
 % FORMATTING TITLES (requires TITLESEC)
+\newcommand{\sectionbreak}{\clearpage\phantomsection}
 \titleformat{\section}{\normalfont\LARGE\bfseries\raggedright}{\thesection.}{2ex}{}
-\titleformat{\subsection}{\normalfont\Large\bfseries}{\thesubsection.}{2ex}{}
-\titleformat{\subsubsection}{\normalfont\large\bfseries}{\thesubsubsection.}{2ex}{}
-\titlespacing*{\section} {0pt}{3.0ex plus 1.5ex minus .2ex}{1.5ex plus .2ex}
-\titlespacing*{\subsection} {0pt}{2.0ex plus 1.0ex minus .2ex}{1.0ex plus .2ex}
-\titlespacing*{\subsubsection}{0pt}{1.5ex plus 0.5ex minus .2ex}{0.5ex plus .2ex}
+\titleformat{\subsection}{\normalfont\Large\bfseries\raggedright}{\thesubsection.}{2ex}{}
+\titleformat{\subsubsection}{\normalfont\large\bfseries\raggedright}{\thesubsubsection.}{2ex}{}
+\titlespacing*{\section} {0pt}{3.0ex plus 2.0ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{2.0ex plus 1.5ex minus .2ex}{1.0ex plus .2ex}
+\titlespacing*{\subsubsection} {0pt}{1.5ex plus 1.0ex minus .2ex}{0.5ex plus .2ex}
 
 % CONFIGURE FLOATS DISTANCES
-\setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
-\setlength{\floatsep}{12.0pt plus 2.0pt minus 2.0pt}
-\setlength{\intextsep}{18.0pt plus 4.0pt minus 4.0pt}
+\setlength{\textfloatsep}{20.0pt plus 10.0pt minus 5.0pt}
+\setlength{\floatsep}{15.0pt plus 5.0pt minus 3.0pt}
+\setlength{\intextsep}{15.0pt plus 5.0pt minus 3.0pt}
 \setfloatlocation{figure}{\figureplacement}
 \setfloatlocation{table}{\tableplacement}
 
@@ -69,7 +70,12 @@
 % CONFIGURE BIBLIOGRAPHY
 \setlength\bibitemsep{\bibentrysep}
 \renewcommand*{\bibfont}{\normalfont}
-\DefineBibliographyStrings{spanish}{andothers = {et\addabbrvspace al\adddot}
+\DefineBibliographyStrings{spanish}{
+    andothers = {et\addabbrvspace al\adddot}
+    references = {\namereferences}
+}
+\DefineBibliographyStrings{english}{
+    references = {\namereferences}
 }
 
 % SET COLOURS FOR LINKS
@@ -88,20 +94,22 @@
     
     \fancyhf{}
     \fancyhead[L]{
+        \vspace{-25pt}
         \hspace{.25cm}
     	\includegraphics[height=\departmentimageheight]{\departmentimage}
+    	{\small
         \begin{tabular}[b]{l}
-            \universityname ~\\
-        	\facultyname ~\\
-        	\universitydepartment ~\\ \vspace{-14pt}
-        \end{tabular}
+            \textsc{\universityname} ~\\
+        	\textsc{\facultyname} ~\\
+        	\textsc{\universitydepartment} ~\\ \vspace{-15pt}
+        \end{tabular}}
     }
 }
 \fancypagestyle{prelude}{
 	\fancyhf{}
 	\fancyhead[L]{}
 	\fancyhead[R]{}
-	\fancyfoot[C]{\small \thepage}
+	\fancyfoot[C]{\small\thepage}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
@@ -109,8 +117,17 @@
 	\fancyhf{}
 	\fancyhead[L]{\nouppercase{\rightmark}}
 	\fancyhead[R]{}
-	\fancyfoot[C]{\small \thepage}
+	\fancyfoot[C]{\small\thepage}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
+
 \renewcommand{\sectionmark}[1]{\markboth{#1}{#1}}     % To have correct names above page
+
+% Autoref default names, applied for English
+\addto\extrasenglish{
+  \renewcommand{\sectionautorefname} {Section}
+  \renewcommand{\subsectionautorefname} {Section}
+  \renewcommand{\figureautorefname} {\namefigure}
+  \renewcommand{\tableautorefname} {\nametable}
+}
